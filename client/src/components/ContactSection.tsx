@@ -2,8 +2,11 @@
    ContactSection — お問い合わせ
    デザイン: ダークネイビー背景 × ゴールドアクセント
    参考: https://www.hita-hikarinomachidukuri.com/contact
+   送信: Formspree (https://formspree.io/f/xkjwwzey) → info@bidow.jp
    ============================================================ */
 import { useState, useRef, useEffect } from "react";
+
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xkjwwzey";
 
 const INQUIRY_TYPES = [
   "選択してください",
@@ -22,6 +25,7 @@ export default function ContactSection() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -45,20 +49,47 @@ export default function ContactSection() {
     setError("");
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim()) { setError("お名前をご入力ください。"); return; }
     if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
       setError("正しいメールアドレスをご入力ください。"); return;
     }
     if (!form.message.trim()) { setError("お問い合わせ内容をご入力ください。"); return; }
-    // mailto fallback（バックエンドなし）
-    const subject = encodeURIComponent(`【立花幻想夜】${form.type || "お問い合わせ"}`);
-    const body = encodeURIComponent(
-      `お名前：${form.name}\nメールアドレス：${form.email}\nお問い合わせ種別：${form.type || "未選択"}\n\n${form.message}`
-    );
-    window.location.href = `mailto:info@bidow.jp?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+
+    setSending(true);
+    setError("");
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          inquiry_type: form.type || "未選択",
+          message: form.message,
+        }),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        const data = await res.json();
+        if (data?.errors) {
+          setError(data.errors.map((e: { message: string }) => e.message).join("、"));
+        } else {
+          setError("送信に失敗しました。しばらく経ってから再度お試しください。");
+        }
+      }
+    } catch {
+      setError("通信エラーが発生しました。しばらく経ってから再度お試しください。");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -116,17 +147,26 @@ export default function ContactSection() {
                 border: "1px solid oklch(0.78 0.14 85 / 30%)",
               }}
             >
+              <div
+                className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-5"
+                style={{ background: "oklch(0.78 0.14 85 / 20%)", border: "1px solid oklch(0.78 0.14 85 / 40%)" }}
+              >
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="oklch(0.78 0.14 85)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </div>
               <p
-                className="text-lg font-semibold mb-2"
+                className="text-lg font-semibold mb-3"
                 style={{ color: "oklch(0.78 0.14 85)", fontFamily: "'Shippori Mincho', serif" }}
               >
-                ありがとうございます
+                送信が完了しました
               </p>
               <p
-                className="text-sm"
+                className="text-sm leading-relaxed"
                 style={{ color: "oklch(0.75 0.04 250)", fontFamily: "'Noto Sans JP', sans-serif", fontWeight: 300 }}
               >
-                メールアプリが開きます。送信後、担当者よりご連絡いたします。
+                お問い合わせありがとうございます。<br />
+                内容を確認の上、担当者よりご連絡いたします。
               </p>
             </div>
           ) : (
@@ -262,14 +302,15 @@ export default function ContactSection() {
               {/* 送信ボタン */}
               <button
                 type="submit"
-                className="w-full py-4 rounded font-semibold text-sm tracking-widest transition-all hover:opacity-90 active:scale-[0.98]"
+                disabled={sending}
+                className="w-full py-4 rounded font-semibold text-sm tracking-widest transition-all hover:opacity-90 active:scale-[0.98] disabled:opacity-60 disabled:cursor-not-allowed"
                 style={{
                   background: "linear-gradient(135deg, oklch(0.78 0.14 85), oklch(0.68 0.16 75))",
                   color: "oklch(0.15 0.04 250)",
                   fontFamily: "'Noto Sans JP', sans-serif",
                 }}
               >
-                送信する
+                {sending ? "送信中..." : "送信する"}
               </button>
 
               <p
