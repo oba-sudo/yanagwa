@@ -1,7 +1,7 @@
 /* ============================================================
    Sponsor.tsx — 協賛募集専用LP (/sponsor)
-   デザイン: 企業向け・明るいホワイト基調 × ゴールドアクセント
-   独立したLPとして機能する専用ページ
+   デザイン: 「宵桜の金箔絵巻」— 深紺・箔押し金・紅桜の公式イベントトーン
+   位置づけ: トップの主役にはせず、事業者向けの控えめな下層案内として維持
    ============================================================ */
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
@@ -33,22 +33,22 @@ const PDF_URL = "/images/sponsor-guide-2026.pdf";
 const LOGO_URL =
   "https://d2xsxph8kpxj0f.cloudfront.net/310519663442056627/Mka8s8bmHpdnByoMCjCFQS/event_logo-f5858ed4a3bDwMfqMmqY52.webp";
 
-/* ── カラートークン（明るい企業向けテーマ） ── */
+/* ── カラートークン（公式イベントの夜景テーマ） ── */
 const C = {
-  bg: "#FAFAF8",           // ページ背景（オフホワイト）
-  bgAlt: "#F4F2ED",        // セクション交互背景
-  bgCard: "#FFFFFF",       // カード背景
-  border: "#E8E2D5",       // ボーダー
+  bg: "#071226",           // ページ背景（夜帳の藍）
+  bgAlt: "#0C1A34",        // セクション交互背景
+  bgCard: "#10213F",       // カード背景
+  border: "#294563",       // ボーダー
   borderGold: "#C9A84C",   // ゴールドボーダー
-  gold: "#B8922A",         // メインゴールド
-  goldLight: "#D4A843",    // 明るいゴールド
-  goldPale: "#F5EDD6",     // 薄いゴールド背景
-  text: "#1A1A1A",         // メインテキスト
-  textSub: "#555550",      // サブテキスト
-  textMuted: "#888880",    // ミュートテキスト
-  navy: "#1C2B4A",         // ネイビー（見出し強調）
-  shadow: "0 2px 16px rgba(0,0,0,0.07)",
-  shadowGold: "0 4px 24px rgba(184,146,42,0.15)",
+  gold: "#D5A82E",         // メインゴールド
+  goldLight: "#F1D879",    // 明るいゴールド
+  goldPale: "#192B48",     // 薄いゴールド背景
+  text: "#F4EEDC",         // メインテキスト
+  textSub: "#D9CFBA",      // サブテキスト
+  textMuted: "#B6AA91",    // ミュートテキスト
+  navy: "#071226",         // ネイビー（見出し強調）
+  shadow: "0 8px 28px rgba(0,0,0,0.22)",
+  shadowGold: "0 8px 30px rgba(213,168,46,0.16)",
 };
 
 /* ── 協賛プランデータ ── */
@@ -321,7 +321,7 @@ function SponsorNav() {
   );
 }
 
-const HERO_BG = "/manus-storage/hero_cropped_c97c3e06.png";
+const HERO_BG = "/images/tachibana-hero-landscape.webp";
 
 /* ── ヒーローセクション ── */
 function SponsorHero() {
@@ -483,7 +483,7 @@ function SponsorHero() {
               { label: "開催期間", value: "2026年11月14日（土）〜 2027年1月17日（日）" },
               { label: "開催日数", value: "65日間" },
               { label: "目標来場者数", value: "10,000人" },
-              { label: "会場", value: "福厳寺（福岡県柳川市）" },
+              { label: "会場", value: "福厳寺（福岡県柳川市奥州町32-1）" },
             ].map((item, i) => (
               <div
                 key={i}
@@ -555,7 +555,7 @@ function OverviewSection() {
               { label: "開催期間", value: "2026年11月14日（土）〜 2027年1月17日（日）" },
               { label: "開催日数", value: "65日間" },
               { label: "開催時間", value: "17:00 開場 ▶ 17:30 スタート ▶ 21:00 受付終了 ▶ 21:30 閉場" },
-              { label: "入場料", value: "大人 1,500円 ／ 子ども（小学生まで）500円　※チラシ持参で無料" },
+              { label: "入場料", value: "大人（中学生以上）1,500円 ／ こども（小学生以下）500円 ／ 未就学児無料　※お支払いは現金のみ" },
               { label: "目標来場者数", value: "10,000人" },
             ].map((row, i) => (
               <div
