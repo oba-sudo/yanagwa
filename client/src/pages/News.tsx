@@ -11,7 +11,7 @@ import { ArrowLeft, ArrowRight, Calendar, Tag, ExternalLink, RefreshCw, AlertCir
 // WordPressサイトのURLをここに設定してください
 // 例: "https://your-wordpress-site.com"
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-const WP_BASE_URL = "https://your-wordpress-site.com";
+const WP_BASE_URL = "https://yanagawa-hikarinomachidukuri.com/news";
 const WP_API = `${WP_BASE_URL}/wp-json/wp/v2`;
 const PER_PAGE = 9;
 
