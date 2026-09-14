@@ -1,27 +1,26 @@
-# 立花幻想夜 ― 福厳寺プロジェクションマッピング ― 公式サイト
+# 立花幻想夜 ― 福厳寺プロジェクションマッピング ―
 
-**URL:** https://yanagawa-hikarinomachidukuri.com/
+柳川・福厳寺で開催する「立花幻想夜 ― 福厳寺プロジェクションマッピング ―」の公式イベントサイトです。来場者に開催日程、料金、会場、アクセス、柳川周遊情報、最新情報、お問い合わせ窓口を分かりやすく届けることを目的としています。
+
+## 開催情報
+
+| 項目 | 内容 |
+| --- | --- |
+| 開催期間 | 2026年11月14日（土）〜 2027年1月17日（日） |
+| 開催時間 | 17:00〜21:30（最終入場21:00） |
+| 会場 | 福厳寺（福岡県柳川市奥州町32-1） |
+| 料金 | 大人（中学生以上）1,500円／こども（小学生以下）500円／未就学児無料 |
+| 支払い | 会場受付・現金のみ |
 
 ## 技術スタック
 
-- **フレームワーク:** React 19 + TypeScript
-- **スタイリング:** Tailwind CSS v4 + shadcn/ui
-- **ビルドツール:** Vite 7
-- **パッケージマネージャー:** pnpm
-
-## ディレクトリ構成
-
-```
-client/
-  public/images/   ← 画像・PDF等の静的ファイル
-  src/
-    components/    ← セクション別コンポーネント
-    pages/         ← ページコンポーネント（Home, Sponsor等）
-    hooks/         ← カスタムフック
-    lib/           ← ユーティリティ
-    App.tsx        ← ルーティング
-    index.css      ← グローバルスタイル・デザイントークン
-```
+| 区分 | 採用技術 |
+| --- | --- |
+| フレームワーク | React 19 + TypeScript |
+| スタイリング | Tailwind CSS 4 + CSS |
+| ルーティング | Wouter |
+| ビルド | Vite 7 |
+| パッケージマネージャー | pnpm |
 
 ## ローカル開発
 
@@ -30,27 +29,28 @@ pnpm install
 pnpm dev
 ```
 
-ブラウザで http://localhost:3000 を開く。
+ブラウザで `http://localhost:3000` を開いてください。
 
-## ビルド（本番用）
+## 本番用ビルド
 
 ```bash
 pnpm build
 ```
 
-ビルド成果物は `dist/public/` に出力される。
+ビルド出力は `dist/public/` です。さくらサーバーへ公開する場合は、生成済みの本番用データに含まれる次の4点を、独自ドメインの公開ルート `/home/habitsseed/www/yanagawa/` へ同階層でアップロードしてください。
 
-## さくらサーバーへのデプロイ手順
+```text
+index.html
+assets/
+images/
+.htaccess
+```
 
-1. `pnpm build` を実行
-2. `dist/public/` 内の以下をさくらサーバーの公開ディレクトリ `/home/habitsseed/www/yanagawa/` にアップロード：
-   - `index.html`
-   - `assets/`（フォルダごと）
-   - `images/`（フォルダごと）
-   - `.htaccess`（隠しファイル・必須）
-3. `.htaccess` はFTPソフトで「隠しファイルを表示」してアップロード
+> `.htaccess` は隠しファイルです。FTPクライアントで隠しファイル表示を有効にしてからアップロードしてください。SPAの `/sponsor`・`/privacy` への直接アクセスを正常に処理するために必要です。
 
-## 注意事項
+## 運用上の要点
 
-- `index.html` 内のJS/CSSファイル名はビルドのたびに変わるため、必ず最新のビルド成果物を使用すること
-- ヒーロー画像（`hero_cropped.png`）はManusのストレージに保存済み（`/manus-storage/hero_cropped_c97c3e06.png`）
+- お問い合わせフォームは Formspree のエンドポイント `https://formspree.io/f/xkjwwzey` と連携しています。
+- 公式Instagramは `https://www.instagram.com/yanagawa_fukugonji/` です。
+- Makuake はフッターの控えめな外部リンクのみで案内しています。
+- ヒーロー画像は `client/public/images/tachibana-hero-landscape.webp` にあり、ローカルの公開用画像としてビルドに含まれます。

@@ -41,7 +41,7 @@ function pad(n: number) {
   return String(n).padStart(2, "0");
 }
 
-const HERO_BG = "/manus-storage/hero_cropped_c97c3e06.png";
+const HERO_BG = "/images/tachibana-hero-landscape.webp";
 
 interface Particle {
   x: number;
