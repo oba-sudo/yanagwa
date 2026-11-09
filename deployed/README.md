@@ -10,3 +10,4 @@ https://yanagawa-hikarinomachidukuri.com/ に公開しているビルド済み�
 
 - 2026-11-09: 古い画面が端末に残る対策として、JS/CSSを `index-v20261109.*` に改名し、`index.html` の参照と `.htaccess`(index.html のキャッシュ無効化)を更新
 - 2026-11-09: 「投稿キャンペーン」区画(SOCIAL CAMPAIGN)を削除(内容確定後に再掲予定)。JS/CSSを `index-v20261109b.*` に改名
+- 2026-11-09: TikTokのリンク先を正しいアカウント(@tchibana_gensouya)に修正。JS/CSSを `index-v20261109c.*` に改名
