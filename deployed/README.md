@@ -7,3 +7,5 @@ https://yanagawa-hikarinomachidukuri.com/ に公開しているビルド済み�
   - `assets/index-*.js` と `assets/index-*.css` を直接編集(ソースは Manus で作成され、現在は参照不可)
   - 2026-11-09: 駐車場マップを差し替え(`images/parking-map-2.*`)。市役所駐車場20台を追加し、4か所・合計160台に更新
 - `.htaccess` は SPA ルーティング用(隠しファイルのためアップロード時に注意)
+
+- 2026-11-09: 古い画面が端末に残る対策として、JS/CSSを `index-v20261109.*` に改名し、`index.html` の参照と `.htaccess`(index.html のキャッシュ無効化)を更新
