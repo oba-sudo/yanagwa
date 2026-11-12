@@ -27,6 +27,8 @@
 @media (max-width:800px){.vis-nav__sns{margin-left:auto}.vis-nav__sns a{width:40px;height:40px}.vis-nav__menu{margin-left:-8px}.vis-nav__inner{gap:10px}}
 .vis-nav__links button{white-space:nowrap}
 @media (min-width:801px) and (max-width:1100px){.vis-nav__links{gap:14px}.vis-nav__links button{font-size:12px;letter-spacing:.02em}.vis-nav__brand small{display:none}}
+.vis-program-card__time{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0 0}
+.vis-program-card__time span{display:inline-block;border:1px solid rgba(126,94,30,.45);background:rgba(200,160,70,.08);color:#7e5e1e;padding:4px 9px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.02em;white-space:nowrap}
 .vis-footer__sns{display:flex;justify-content:center;gap:22px;margin-top:26px}
 .vis-footer__sns a{display:inline-flex;align-items:center;gap:8px;color:#e2b950;font-size:13px;font-weight:700;letter-spacing:.08em;text-decoration:none}
 .vis-footer__sns a:hover{text-decoration:underline}
