@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>会場ご案内 | 立花幻想夜 福厳寺プロジェクションマッピング</title>
+<meta name="description" content="立花幻想夜 福厳寺プロジェクションマッピングの会場ウォーキングマップ・スポット案内・営業時間・料金のご案内です。">
+<meta property="og:title" content="会場ご案内 | 立花幻想夜">
+<meta property="og:description" content="福厳寺 境内のウォーキングマップとスポット案内">
+<meta property="og:image" content="https://yanagawa-hikarinomachidukuri.com/guide/images/guide-map-20261112.jpg">
+<meta name="theme-color" content="#0b1a3a">
+<style>
+:root{--bg:#0b1a3a;--card:#f7f1e3;--ink:#1c2a4a;--gold:#e8b44a;--gold2:#c8932a;--muted:#5b6785}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:#fff;font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",Meiryo,sans-serif;line-height:1.7}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+header{text-align:center;padding:20px 0 8px}
+header .sub{color:var(--gold);letter-spacing:.2em;font-size:12px;margin:0}
+header h1{margin:4px 0 2px;font-size:28px;letter-spacing:.12em;font-weight:700}
+header p{margin:0;font-size:14px;color:#d9deea}
+.map{display:block;width:100%;border:0;padding:0;background:none;margin:14px 0 0;position:relative;cursor:zoom-in}
+.map img{display:block;width:100%;height:auto;border-radius:10px;border:2px solid var(--gold2)}
+.map span{display:block;margin:10px auto 0;width:max-content;background:var(--gold);color:var(--ink);border-radius:999px;padding:9px 22px;font-size:15px;font-weight:700}
+.hint{text-align:center;font-size:13px;color:#c5cce0;margin:8px 0 0}
+section{background:var(--card);color:var(--ink);border-radius:12px;padding:18px 18px;margin:18px 0}
+section h2{margin:0 0 10px;font-size:18px;border-left:5px solid var(--gold);padding-left:10px}
+ol.spots{list-style:none;margin:0;padding:0}
+ol.spots li{display:flex;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid #e3d9bf;font-weight:600}
+ol.spots li:last-child{border-bottom:0}
+ol.spots b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:15px}
+ol.spots small{display:block;font-weight:400;color:var(--muted);font-size:12px;line-height:1.4}
+.note{background:#ece2c6;border-radius:8px;padding:10px 12px;font-size:13px;margin:12px 0 0}
+.show{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 12px}
+.show div{background:var(--bg);color:#fff;border:1px solid var(--gold2);border-radius:10px;text-align:center;padding:8px 2px}
+.show small{display:block;color:var(--gold);font-size:11px;line-height:1.3}
+.show b{font-size:19px;letter-spacing:.02em}
+.acts{margin:0;padding:0;list-style:none;font-size:14px}
+.acts li{padding:3px 0}
+dl{margin:0}
+dt{font-weight:700;margin-top:10px;color:var(--gold2)}
+dd{margin:0;font-size:16px}
+.links{display:grid;gap:10px}
+.links a{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--bg);color:#fff;text-decoration:none;border:1px solid var(--gold2);border-radius:10px;padding:14px 16px;font-weight:700;min-height:48px}
+.links a span{flex:1}
+.links a small{display:block;font-weight:400;color:#c5cce0;font-size:12px}
+.links a::after{content:"›";color:var(--gold);font-size:22px}
+footer{text-align:center;font-size:12px;color:#9aa5c4;padding:6px 0 28px}
+#lb{position:fixed;inset:0;background:#000;z-index:10;display:none;flex-direction:column}
+#lb.on{display:flex}
+#lb .bar{flex:none;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;color:#fff;font-size:13px;background:#0b1a3a}
+#lb button{background:var(--gold);color:var(--ink);border:0;border-radius:999px;padding:8px 18px;font-weight:700;font-size:14px}
+#lb .scroll{flex:1;overflow:auto;-webkit-overflow-scrolling:touch;touch-action:pan-x pan-y pinch-zoom}
+#lb img{display:block;width:220%;max-width:none;height:auto}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="sub">WALKING MAP</p>
+  <h1>立花幻想夜</h1>
+  <p>福厳寺プロジェクションマッピング 会場ご案内</p>
+</header>
+
+<button class="map" id="open" type="button" aria-label="マップを拡大して見る">
+  <img src="images/guide-map-20261112.webp" width="1122" height="1402" alt="立花幻想夜 福厳寺 会場ウォーキングマップ。スポット①〜⑦の位置と、開催期間・営業時間・料金を記載しています。">
+  <span>🔍 タップで拡大</span>
+</button>
+<p class="hint">拡大表示では、指で広げて(ピンチ)さらに大きくできます。</p>
+
+<section id="time">
+  <h2>上映時間</h2>
+  <div class="show">
+    <div><small>第1回</small><b>17:30</b></div>
+    <div><small>第2回</small><b>18:30</b></div>
+    <div><small>第3回</small><b>19:30</b></div>
+    <div><small>第4回</small><b>20:30</b></div>
+  </div>
+  <p style="margin:0 0 8px">1時間ごとに上映します。(1日4公演・21:30終了)</p>
+  <ul class="acts">
+    <li>1公演 = 第一幕〜第四幕(約60分)</li>
+    <li>1幕 = 上映 約4分 + インターバル 約10分(合計 約15分)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>スポット案内</h2>
+  <ol class="spots">
+    <li><b>1</b>福厳寺の文字投影</li>
+    <li><b>2</b>入口裏側プロジェクションマッピング</li>
+    <li><b>3</b><span>本堂(メイン)プロジェクションマッピング</span></li>
+    <li><b>4</b>お香・お参りの場所</li>
+    <li><b>5</b>ご祈祷長 購入場所</li>
+    <li><b>6</b><span>境内入口<small>※写真はイメージ画像です</small></span></li>
+    <li><b>7</b>御霊屋</li>
+  </ol>
+  <p class="note">開催中は境内でお参りいただけます。<br>※受付・トイレは敷地外です。</p>
+</section>
+
+<section>
+  <h2>開催情報</h2>
+  <dl>
+    <dt>開催期間</dt><dd>2026年11月14日(土)〜 2027年1月17日(日)</dd>
+    <dt>営業時間</dt><dd>17:30(点灯)〜 21:30</dd>
+    <dt>料金</dt><dd>大人 1,500円 ／ 子ども 500円<br><small>柳川市内の小学生は無料</small></dd>
+  </dl>
+</section>
+
+<section>
+  <h2>公式サイト・SNS</h2>
+  <div class="links">
+    <a href="https://yanagawa-hikarinomachidukuri.com/"><span>公式サイト(トップ)<small>イベントの詳細はこちら</small></span></a>
+    <a href="https://yanagawa-hikarinomachidukuri.com/#parking"><span>駐車場のご案内<small>4か所・合計160台(無料)</small></span></a>
+    <a href="https://www.instagram.com/yanagawa_fukugonji/" target="_blank" rel="noopener"><span>Instagram<small>@yanagawa_fukugonji</small></span></a>
+    <a href="https://www.tiktok.com/@tchibana_gensouya" target="_blank" rel="noopener"><span>TikTok<small>@tchibana_gensouya</small></span></a>
+  </div>
+</section>
+<footer>© 立花幻想夜 福厳寺プロジェクションマッピング</footer>
+</div>
+
+<div id="lb" role="dialog" aria-modal="true" aria-label="マップ拡大表示">
+  <div class="bar"><span>指で広げて拡大・ドラッグで移動</span><button type="button" id="close">閉じる</button></div>
+  <div class="scroll"><img src="images/guide-map-20261112.webp" alt="立花幻想夜 福厳寺 会場ウォーキングマップ(拡大)"></div>
+</div>
+<script>
+(function(){
+  var lb=document.getElementById('lb');
+  document.getElementById('open').addEventListener('click',function(){lb.classList.add('on');document.body.style.overflow='hidden'});
+  function c(){lb.classList.remove('on');document.body.style.overflow=''}
+  document.getElementById('close').addEventListener('click',c);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')c()});
+})();
+</script>
+</body>
+</html>
