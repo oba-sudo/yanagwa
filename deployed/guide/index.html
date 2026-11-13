@@ -53,16 +53,14 @@ section.info h2::after{transform:scaleX(-1)}
 .flow2 .lab br{display:none}
 .flow2 .lab small{display:inline;margin-left:6px}
 .tiles{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:9px}
-.tile{position:relative;border-radius:9px;height:112px;overflow:visible;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(0,0,0,.25)}
+.tile{position:relative;border-radius:9px;height:92px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;border:1px solid rgba(0,0,0,.25)}
 .tile:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;margin-top:-7px;border:7px solid transparent;border-left:8px solid var(--gold2);border-right:0;z-index:2}
-.tile::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(180deg,rgba(5,10,28,.15),rgba(5,10,28,.55))}
-.tile b,.tile span{position:relative;z-index:1}
-.tile b{background:rgba(8,12,26,.88);color:#fff;border:1px solid var(--gold);border-radius:6px;padding:3px 7px;font-size:13px}
+.tile b{background:#0b0f1d;color:#fff;border:1px solid var(--gold);border-radius:6px;padding:3px 7px;font-size:13px}
 .tile span{background:var(--card);color:var(--ink);border-radius:999px;padding:2px 6px;font-size:11px;font-weight:700;white-space:nowrap}
-.a1{background:#0b1a3a url(images/act-1.webp) center/cover no-repeat}
-.a2{background:#0b1a3a url(images/act-2.webp) center/cover no-repeat}
-.a3{background:#0b1a3a url(images/act-3.webp) center/cover no-repeat}
-.a4{background:#0b1a3a url(images/act-4.webp) center/cover no-repeat}
+.a1{background:linear-gradient(160deg,#f4a6cf,#8a4db8)}
+.a2{background:linear-gradient(160deg,#6ec6c0,#16596b)}
+.a3{background:linear-gradient(160deg,#f0a13a,#a8261c)}
+.a4{background:linear-gradient(160deg,#9db4e8,#1a2e66)}
 .info .same{margin:12px 2px 0;font-size:12.5px;line-height:1.6;color:#d9deea}
 @media (min-width:600px){
  .starts,.flow2{display:flex;align-items:center;gap:14px}
@@ -112,10 +110,10 @@ footer{text-align:center;font-size:12px;color:#9aa5c4;padding:6px 0 28px}
   <div class="flow2">
     <p class="lab">1回の<br>上映の流れ<small>(約60分)</small></p>
     <ol class="tiles">
-      <li class="tile a1"><b>第一幕</b><span>0〜15分</span></li>
-      <li class="tile a2"><b>第二幕</b><span>15〜30分</span></li>
-      <li class="tile a3"><b>第三幕</b><span>30〜45分</span></li>
-      <li class="tile a4"><b>第四幕</b><span>45〜60分</span></li>
+      <li class="tile a1"><b>第一幕</b><span>30分〜</span></li>
+      <li class="tile a2"><b>第二幕</b><span>45分〜</span></li>
+      <li class="tile a3"><b>第三幕</b><span>00分〜</span></li>
+      <li class="tile a4"><b>第四幕</b><span>15分〜</span></li>
     </ol>
   </div>
   <p class="same">※各回の上映内容(第一幕〜第四幕)は同じです。お好きな時間からご入場いただき、全4幕の映像をお楽しみいただけます。</p>
