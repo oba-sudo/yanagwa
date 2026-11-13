@@ -35,8 +35,19 @@ ol.spots small{display:block;font-weight:400;color:var(--muted);font-size:12px;l
 .show div{background:var(--bg);color:#fff;border:1px solid var(--gold2);border-radius:10px;text-align:center;padding:8px 2px}
 .show small{display:block;color:var(--gold);font-size:11px;line-height:1.3}
 .show b{font-size:19px;letter-spacing:.02em}
-.acts{margin:0;padding:0;list-style:none;font-size:14px}
-.acts li{padding:3px 0}
+.flow{margin:2px 0 8px;font-weight:700;font-size:14px;text-align:center;color:var(--muted)}
+.clocks{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0}
+.clk{margin:0;text-align:center}
+.clk svg{display:block;width:100%;max-width:92px;height:auto;margin:0 auto}
+.clk .face{fill:var(--bg);stroke:var(--gold2);stroke-width:3}
+.clk .wedge{fill:var(--gold);opacity:.95}
+.clk .tick line{stroke:#fff;stroke-width:1.6;stroke-linecap:round;opacity:.75}
+.clk .hand{stroke:#fff;stroke-width:3;stroke-linecap:round}
+.clk .pin{fill:#fff}
+.clk figcaption{margin-top:6px;line-height:1.35}
+.clk figcaption b{display:block;font-size:14px}
+.clk figcaption span{display:block;font-size:12.5px;color:var(--muted);font-weight:600;white-space:nowrap}
+.unit{margin:12px 0 0;text-align:center;font-size:13.5px;font-weight:600}
 dl{margin:0}
 dt{font-weight:700;margin-top:10px;color:var(--gold2)}
 dd{margin:0;font-size:16px}
@@ -76,13 +87,51 @@ footer{text-align:center;font-size:12px;color:#9aa5c4;padding:6px 0 28px}
     <div><small>第3回</small><b>19:30</b></div>
     <div><small>第4回</small><b>20:30</b></div>
   </div>
-  <p style="margin:0 0 8px">1時間ごとに上映します。(1日4公演・21:30終了)</p>
-  <ul class="acts">
-    <li>1公演 = 第一幕〜第四幕(約60分)</li>
-    <li>1幕 = 上映 約4分 + インターバル 約10分(合計 約15分)</li>
-    <li>第四幕のあともインターバルを挟み、また第一幕に戻ります。</li>
-  </ul>
-  <p class="note">インターバル中は、本堂入口(⑥)での堂内参拝や、御霊屋(⑦)へどうぞ。</p>
+  <p class="flow">各回の流れ(約60分)</p>
+  <div class="clocks">
+    <figure class="clk">
+      <svg viewBox="0 0 100 100" role="img" aria-label="第一幕 0分から15分">
+        <circle cx="50" cy="50" r="46" class="face"/>
+        <path d="M50 50 L50.0 10.0 A40 40 0 0 1 90.0 50.0 Z" class="wedge"/>
+        <g class="tick"><line x1="50.0" y1="13.0" x2="50.0" y2="17.0"/><line x1="87.0" y1="50.0" x2="83.0" y2="50.0"/><line x1="50.0" y1="87.0" x2="50.0" y2="83.0"/><line x1="13.0" y1="50.0" x2="17.0" y2="50.0"/></g>
+        <line x1="50" y1="50" x2="86.0" y2="50.0" class="hand"/>
+        <circle cx="50" cy="50" r="3.2" class="pin"/>
+      </svg>
+      <figcaption><b>第一幕</b><span>0〜15分</span></figcaption>
+    </figure>
+    <figure class="clk">
+      <svg viewBox="0 0 100 100" role="img" aria-label="第二幕 15分から30分">
+        <circle cx="50" cy="50" r="46" class="face"/>
+        <path d="M50 50 L90.0 50.0 A40 40 0 0 1 50.0 90.0 Z" class="wedge"/>
+        <g class="tick"><line x1="50.0" y1="13.0" x2="50.0" y2="17.0"/><line x1="87.0" y1="50.0" x2="83.0" y2="50.0"/><line x1="50.0" y1="87.0" x2="50.0" y2="83.0"/><line x1="13.0" y1="50.0" x2="17.0" y2="50.0"/></g>
+        <line x1="50" y1="50" x2="50.0" y2="86.0" class="hand"/>
+        <circle cx="50" cy="50" r="3.2" class="pin"/>
+      </svg>
+      <figcaption><b>第二幕</b><span>15〜30分</span></figcaption>
+    </figure>
+    <figure class="clk">
+      <svg viewBox="0 0 100 100" role="img" aria-label="第三幕 30分から45分">
+        <circle cx="50" cy="50" r="46" class="face"/>
+        <path d="M50 50 L50.0 90.0 A40 40 0 0 1 10.0 50.0 Z" class="wedge"/>
+        <g class="tick"><line x1="50.0" y1="13.0" x2="50.0" y2="17.0"/><line x1="87.0" y1="50.0" x2="83.0" y2="50.0"/><line x1="50.0" y1="87.0" x2="50.0" y2="83.0"/><line x1="13.0" y1="50.0" x2="17.0" y2="50.0"/></g>
+        <line x1="50" y1="50" x2="14.0" y2="50.0" class="hand"/>
+        <circle cx="50" cy="50" r="3.2" class="pin"/>
+      </svg>
+      <figcaption><b>第三幕</b><span>30〜45分</span></figcaption>
+    </figure>
+    <figure class="clk">
+      <svg viewBox="0 0 100 100" role="img" aria-label="第四幕 45分から60分">
+        <circle cx="50" cy="50" r="46" class="face"/>
+        <path d="M50 50 L10.0 50.0 A40 40 0 0 1 50.0 10.0 Z" class="wedge"/>
+        <g class="tick"><line x1="50.0" y1="13.0" x2="50.0" y2="17.0"/><line x1="87.0" y1="50.0" x2="83.0" y2="50.0"/><line x1="50.0" y1="87.0" x2="50.0" y2="83.0"/><line x1="13.0" y1="50.0" x2="17.0" y2="50.0"/></g>
+        <line x1="50" y1="50" x2="50.0" y2="14.0" class="hand"/>
+        <circle cx="50" cy="50" r="3.2" class="pin"/>
+      </svg>
+      <figcaption><b>第四幕</b><span>45〜60分</span></figcaption>
+    </figure>
+  </div>
+  <p class="unit">1幕 約15分 = 上映 約4分 + インターバル 約10分</p>
+  <p class="note">インターバル中は、本堂入口(⑥)での堂内参拝や、御霊屋(⑦)へどうぞ。<br>第四幕のあともインターバルを挟み、また第一幕に戻ります。</p>
 </section>
 
 <section>
