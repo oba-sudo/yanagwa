@@ -11,6 +11,7 @@
 .vis-parking__list i{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--vis-navy);color:#fff;font:700 13px "Noto Sans JP",sans-serif;font-style:normal}
 .vis-parking__name strong{display:block;color:var(--vis-navy);font:600 17px/1.5 "Shippori Mincho",serif}
 .vis-parking__name small{display:block;margin-top:2px;color:#59636e;font-size:12px;line-height:1.6}
+.vis-parking__name em{display:block;margin-top:3px;color:var(--vis-red);font:700 12px/1.5 "Noto Sans JP",sans-serif;font-style:normal;letter-spacing:.02em}
 .vis-parking__count{color:var(--vis-red);font:700 28px/1 "Shippori Mincho",serif;white-space:nowrap}
 .vis-parking__count small{margin-left:2px;font-size:14px}
 .vis-parking__total{display:flex;justify-content:space-between;align-items:center;margin:14px 0 0;padding:13px 18px;background:var(--vis-red);color:#fff;font-weight:700;font-size:14px;letter-spacing:.08em}
